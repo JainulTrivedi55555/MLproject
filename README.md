@@ -49,21 +49,49 @@ Then go to `http://localhost:5000`, fill in the form, and get a prediction.
 ## Project layout
 
 ```
-src/
-├── components/
-│   ├── data_ingestion.py
-│   ├── data_transformation.py
-│   └── model_trainer.py
-├── pipeline/
-│   ├── train_pipeline.py
-│   └── predict_pipeline.py
-├── utils.py
-├── exception.py
-└── logger.py
-
-notebook/          # EDA + model training notebooks
-templates/         # Flask HTML templates
-artifacts/         # Saved model and preprocessor
+├── application.py
+├── setup.py
+├── requirements.txt
+├── render.yaml
+│
+├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── pipeline/
+│   │   ├── train_pipeline.py
+│   │   └── predict_pipeline.py
+│   ├── exception.py
+│   ├── logger.py
+│   └── utils.py
+│
+├── notebook/
+│   ├── 1. EDA STUDENT PERFORMANCE.ipynb
+│   ├── 2. MODEL TRAINING.ipynb
+│   ├── data/
+│   │   └── stud.csv
+│   └── catboost_info/
+│       ├── catboost_training.json
+│       ├── learn_error.tsv
+│       └── time_left.tsv
+│
+├── templates/
+│   ├── index.html
+│   └── home.html
+│
+├── artifacts/
+│   ├── data.csv
+│   ├── train.csv
+│   ├── test.csv
+│   ├── model.pkl
+│   └── preprocessor.pkl
+│
+├── catboost_info/
+│   ├── catboost_training.json
+│   ├── learn_error.tsv
+│   └── time_left.tsv
+│
+└── .ebextensions/
+    └── python.config
 ```
-
----
